@@ -1,2 +1,14 @@
 * About
 A toy example that reproduces a crash which occurs with sdl2-mixer callbacks.
+
+SBCL Crashes when a GC is triggered from a foreign thread callback. This doesn't crash if a GC is explicitly called (i.e. `sb-ext:gc` from user code does not crash).
+
+This demo spins up a foreign thread and allocates a bunch of memory on it. Eventually a GC is triggered and lisp crashes.
+
+To run:
+
+#+BEGIN_SRC lisp
+(progn
+   (load "crash.lisp")
+   (run-crash-demo))
+#+END_SRC
