@@ -1,2 +1,2 @@
 * About
-This is a toy example that reproduces a crash which occurs with sdl2 callbacks on windows.
+A toy example that reproduces a crash which occurs with sdl2-mixer callbacks.
